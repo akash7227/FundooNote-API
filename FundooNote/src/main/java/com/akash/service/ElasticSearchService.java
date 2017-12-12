@@ -53,12 +53,11 @@ public class ElasticSearchService {
 					.field("description", note.getDescription()).endObject();
 			
 			String data = notedata.string();
-			IndexResponse response = client
-									.prepareIndex("fundoonote", "note")
-									.setId(id)
-									.setSource(data)
-									.execute()
-									.actionGet();
+			IndexResponse response = client	.prepareIndex("fundoonote", "note")
+							.setId(id)
+							.setSource(data)
+							.execute()
+							.actionGet();
 		}
 
 	}
